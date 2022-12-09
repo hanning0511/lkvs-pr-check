@@ -15,6 +15,8 @@ RUN apt update && \
 	  codespell && \
     apt autoremove
 
+RUN mkdir -p /usr/share/codespell
+ADD dictionary.txt /usr/share/codespell/dictionary.txt
 ADD spelling.txt /usr/bin/spelling.txt
 ADD const_structs.checkpatch /usr/bin/const_structs.checkpatch
 ADD checkpatch.pl /bin/checkpatch.pl
